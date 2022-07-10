@@ -2,12 +2,11 @@
 name = "linksapp"
 version = "0.1.0"
 edition = "2021"
-
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-perseus = { version = "0.4.0-beta.1", features = ["hydrate"] }
-sycamore = "0.8.0-beta.6"
+perseus = { version = "0.4.0-beta.3", features = ["hydrate"] }
+sycamore = "=0.8.0-beta.7"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1.0.81"
 lazy_static = "1.4.0"
@@ -21,7 +20,7 @@ config = "0.13.1"
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
 tokio = { version = "1", features = [ "macros", "rt", "rt-multi-thread" ] }
-perseus-integration = { path = "../../../packages/perseus-integration", default-features = false }
+perseus-actix-web = { version = "=0.4.0-beta.3", features = [ "dflt-server" ] }
 reqwest = "0.11"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
@@ -34,8 +33,7 @@ path = "src/lib.rs"
 crate-type = [ "cdylib", "rlib" ]
 
 [[bin]]
-name = "perseus-example-fetching"
+name = "linksapp"
 path = "src/lib.rs"
 #perseus = "0.4.0-beta.1"
-ureq = {version = "2.4.0", features = ["json"]}
-
+# ureq = {version = "2.4.0", features = ["json"]}
