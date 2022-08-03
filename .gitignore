@@ -1,4 +1,6 @@
 /target
 /Cargo.lock
-/static/landing
+/static
 /assets
+/dist
+/pkg
